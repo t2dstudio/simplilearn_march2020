@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>filter_demo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>RegisterController</display-name>
+    <servlet-name>RegisterController</servlet-name>
+    <servlet-class>com.controller.RegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterController</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>ValidatorFilter</display-name>
+    <filter-name>ValidatorFilter</filter-name>
+    <filter-class>com.interceptor.ValidatorFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ValidatorFilter</filter-name>
+    <servlet-name>RegisterController</servlet-name>
+  </filter-mapping>
+</web-app>
